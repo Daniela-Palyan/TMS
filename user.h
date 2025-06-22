@@ -25,10 +25,10 @@ public:
     operator bool() const;
 
 public:
-    void addTask(Task* task);
-    void deleteTask(const std::string& tid);
+    void add_task(Task* task);
+    void delete_task(const std::string& tid);
     bool login(const std::string& psw);
     void logout();
-    void listTasks() const;
-    Task* searchTask(const std::string& title);
+    void list_tasks() const;
+    Task* search_task(const std::string& title);
 };
