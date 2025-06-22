@@ -54,11 +54,11 @@ std::ostream& operator<<(std::ostream&os, const User& other) {
 	return os;
 }
 
-void addTask(Task* task) {
+void add_task(Task* task) {
 	m_tasks.push_back(task);
 }
 
-void deleteTask(const std::string& tid) {
+void delete_task(const std::string& tid) {
 	for (int i = 0; i < m_tasks.size(); ++i) {
 		if (m_tasks[i]->get_task_id() == tid) {
 			delete m_tasks[i];
@@ -80,7 +80,7 @@ void logout() {
 	is_logged = false;
 }
 
-void listTasks() const {
+void list_tasks() const {
 	for (int i = 0; i < m_tasks.size(); ++i) {
 		m_tasks[i]->display_info();
 	}
