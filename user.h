@@ -20,13 +20,14 @@ public:
 public:
     User& operator=(User& other);
     friend ostream& operator<<(ostream& os, const User& other);
-    friend ostream& operator>>(const ostream& os, User& other);
+//    friend ostream& operator>>(const ostream& os, User& other);
     bool operator bool() const;
 
 public:
     void addTask(Task* task);
-    void deleteTask(const std::string& title);
-    void editTask(const std::string& title, const Task& updatedTask);
+    void deleteTask(const std::string& tid);
+    bool login(const std::string& psw);
+    void logout();
     void listTasks() const;
     Task* searchTask(const std::string& title);
 };

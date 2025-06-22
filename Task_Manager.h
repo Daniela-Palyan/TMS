@@ -1,8 +1,11 @@
+#include <vector>
+#include "user.h"
+
 class TaskManager{
 
 private:
-    std::vector<User*> users; // List of all users.
-	User* loggedInUser; 
+    std::vector<User*> m_users; // List of all users.
+	std::vector<Task*> m_all_tasks;
 
 public:
     TaskManager();
@@ -11,13 +14,9 @@ public:
     ~TaskManager();
 
 public:
-    void registerUser(const std::string& username, const std::string& password);
-    bool login(const std::string& username, const std::string& password);
-    void logout();
-
-    void addTaskForUser(const Task& task);
-    void deleteTaskForUser(const std::string& title);
-    void editTaskForUser(const std::string& title, const Task& updatedTask);
-    void displayTasksForUser() const;
+	User* registre_user(const std::string& name, const std::string& psw);
+	User* login(const std::string& name, const std::string& psw);
+	void logout(User* user);
+	Task* add_task (User* user,const std::string& title, const std::string& desc, const std::string& deadline, const std::strng& category, int prio, int status);
 
 };
