@@ -1,4 +1,5 @@
 #include <vector>
+#include <iostream>
 #include <string>
 #include "Task.h"
 
@@ -19,9 +20,9 @@ public:
 
 public:
     User& operator=(User& other);
-    friend ostream& operator<<(ostream& os, const User& other);
+    friend std::ostream& operator<<(std::ostream& os, const User& other);
 //    friend ostream& operator>>(const ostream& os, User& other);
-    bool operator bool() const;
+    operator bool() const;
 
 public:
     void addTask(Task* task);
